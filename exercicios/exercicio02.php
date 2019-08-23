@@ -9,7 +9,7 @@
     <body>
     <div class="container text-white bg-dark">
             <fieldset>
-                <legend>4 - Calcule os valores</legend>
+                <legend>1 - Calcule o modulo</legend>
                 <form action="#" method="post">
                     <div class="form-group">
                         <label>Informe o valor</label>
@@ -25,6 +25,30 @@
                 $valor01 = isset($_POST['valor01']) ? $_POST['valor01']: 0;
                 echo "<br>";
                 echo ($valor01 > 0) ? $valor01 ." o modulo é |" .$valor01 ."|": $valor01 ." o modulo é |" .$valor01*-1 ."|";
+            ?>
+            <br><br>
+        </div>
+
+        <div class="container text-white bg-secondary">
+            <fieldset>
+                <legend>2 - Par ou Impar</legend>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label>Informe o valor</label>
+                        <input type="number" step= 1 name="parImpar" class="form-control">
+                    </div>
+
+                    <button type="submit" class="btn btn-primary">Verificar!</button>
+                </form>
+            </fieldset>
+         
+
+            <?php
+                echo "<br>";
+                if(isset($_POST['parImpar']) && $_POST['parImpar'] != "") {
+                    $parImpar = $_POST['parImpar'];
+                    echo ($parImpar % 2 == 0) ? "É par" : "É impar";
+                }
             ?>
             <br><br>
         </div>
