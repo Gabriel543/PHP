@@ -20,24 +20,34 @@
                             "nome" => "Caneta",
                             "quantidade" => "100 un",
                             "preço" => 10.90,
-                            "Imagem" => "#"
+                            "Imagem" => "prod1"
                         ),
                         array(
                             "id" => 2,
                             "nome" => "Lapis",
                             "quantidade" => "250 un",
                             "preço" => 3.50,
-                            "Imagem" => "#"
+                            "Imagem" => "prod2"
                         ),
                         array(
                             "id" => 3,
                             "nome" => "Borracha",
                             "quantidade" => "132 un",
                             "preço" => 0.45,
-                            "Imagem" => "#"
+                            "Imagem" => "prod3"
                         )
                     );
                     
+                    $array = array(
+                        "id" => 3,
+                            "nome" => "Apagador",
+                            "quantidade" => "62 un",
+                            "preço" => 10.45,
+                            "Imagem" => "prod4"
+                    );
+                    
+                    # insere um elemento em uma posição do array
+                    array_push($lista, $array);
                 ?>
                 <!-- Estrutura de repetição -->
                 <?php for($i=0;$i < sizeof($lista) ;$i++) : ?>
