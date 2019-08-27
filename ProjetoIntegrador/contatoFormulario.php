@@ -6,7 +6,7 @@ If($_SERVER["REQUEST_METHOD"] === "POST"){
     $assunto = filter_input(INPUT_POST, "txtAssunto");
     $mensagem = filter_input(INPUT_POST, "txtMensagem");
 
-    echo "Oi$nome <br> $email <br> $assunto <br> $mensagem";
+    echo "$nome <br> $email <br> $assunto <br> $mensagem";
 }else{
     header("location: contato.php");
 }
