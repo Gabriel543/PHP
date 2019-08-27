@@ -1,0 +1,110 @@
+:root{
+    --grid-size-extra-small: 546px;
+    --background-position: 0px;
+}
+
+body{
+    font-family: Verdana, Geneva, sans-serif;
+    background-image: url(../Imagens/Pizza_HD3.jpg);
+    background-repeat: no-repeat;
+    background-attachment:fixed;
+    background-size: cover;
+    background-position: 0px 0px;
+    padding-top: 100px;
+}
+
+
+.navbar{
+    z-index: 999;
+    position:fixed;
+    top: 0;
+    width: 1110px;
+   -moz-box-shadow: 0px 5px 5px rgba(0, 0, 0,0.5);
+    -webkit-box-shadow: 0px 5px 5px rgba(0, 0, 0, .5);
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .5);
+   
+}
+            p.legenda{
+                font-size: 25px;
+            }
+            div.row{
+                
+            }
+            h2.alert{
+                
+                
+            }
+            a.dropdown-item{
+                color: #007BFF;
+            }
+
+        footer{
+            background-color: brown;
+        }
+        i.fa-5x{
+            margin-left: 15px;
+        }
+        p.aliright{
+            text-align: right;
+            color: aliceblue;
+            font-size: 20px;
+        }
+        p.aligcen{
+            text-align: center;
+            color: aliceblue;
+            font-size: 15px;
+        }
+        img.displayed{
+            width: 200px;
+            margin: 0 auto;
+        }
+        p.subtitile{
+            text-align: center;
+        }
+        h1.jumbotron{
+            
+            background-color: ;
+            color: ;
+            border-radius: 0;
+            text-align: center;
+        }
+
+        
+        @media screen and (max-width:1199.5px){
+            body{
+                background-position: -140px 0px;
+            }
+            .navbar{
+                 width: 930px;
+            }
+
+        }
+        
+        @media screen and (max-width:991px){
+            body{
+                background-position: -300px 0px;
+            }
+            .navbar{
+                 width: 690px;
+            }
+        }
+        
+        @media screen and (max-width:767.5px){
+            body{
+                background-position: -400px 0px;
+            }
+            .navbar{
+                 width: 510px;
+            }
+
+        }
+        @media screen and (max-width:576px){
+            body{
+                background-position: var(--background-position) 0px;
+            }
+            .navbar{
+                width: var(--grid-size-extra-small);
+                
+            }
+         
+        }
