@@ -46,25 +46,25 @@
                 <div class="col">
                     <div class="divmain">
                         <div class="col-lg-10 col-sm-12 container">
-                            <form method="post">
-                                <div class="col-12">
+                            <form action="faleConosco.php" method="post">
+                                <div class="col-12" class="form-group">
                                     <p>Nome (Obrigatório)</p>
-                                    <input name="nome" type="text" required>
+                                    <input name="txtNome" type="text" class="form-control" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12" class="form-group">
                                     <p>E-mail (Obrigatório)</p>
-                                    <input name="email" type="email" required>
+                                    <input name="txtEmail" type="email" class="form-control" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12" class="form-group">
                                     <p>Assunto</p>
-                                    <input name="assunto" type="text">
+                                    <input name="txtAssunto" type="text" class="form-control" required>
                                 </div>
-                                <div class="col-12">
+                                <div class="col-12" class="form-group">
                                     <p>Mensagem (Obrigatório)</p>
-                                    <textarea name="mensagem" cols="40" rows="5" required></textarea>
+                                    <textarea name="txtMensagem" cols="40" rows="5" class="form-control" required></textarea>
                                 </div>
                                 <div class="col-12">
-                                    <input  type="submit" class="sub" value="Enviar">
+                                    <input  type="submit" class="sub" value="Enviar" style="margin-top: 10px;">
                                 </div>
                             </form>
                         </div> 
