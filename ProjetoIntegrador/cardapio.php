@@ -323,137 +323,69 @@
                 "precoG" => 49,00,
             )
         );
+
+        $pizzas = array(
+            array(
+                "Pizzas Simples"
+            ),
+            array(
+                "Pizzas Especiais"
+            ),
+            array(
+                "Pizzas Doces"
+            )
+        );
+        array_push($pizzas[0],$simples);
+        array_push($pizzas[1],$especiais);
+        array_push($pizzas[2],$doces);
     ?>
 
-            <div class="row">
-            <div class="col-sm-12 col-md-12">
-                <h1 class="jumbotron">Cardápio</h1>
-             </div> 
+    <div class="row">
+        <div class="col-sm-12 col-md-12">
+            <h1 class="jumbotron">Cardápio</h1>
+        </div> 
+    </div>
+       
+    <div class="col">
+        <?php for($i=0;$i<sizeof($pizzas);$i++) : ?>
+            <div class="tamanhos row" id=simples>
+                <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
+                    <h2><?=$pizzas[$i][0] ?></h2>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                    <h3>Pequena</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                    <h3>Média</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                    <h3>Grande</h3>
+                </div>
             </div>
-            
-            
-            <div class="col">
-                <div class="tamanhos row" id=simples>
-                    <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
-                        <h2>Pizzas Simples</h2>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Pequena</h3>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Média</h3>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Grande</h3>
-                    </div>
-                    
-                </div>
-
-
-                <?php for($i=0;$i < sizeof($simples) ;$i++) :?>
-                <div class="<?= ($i % 2 == 0) ? 'pizzas1 row': 'pizzas2 row';?>">
+            <?php for($j=0;$j<sizeof($pizzas[$i][1]);$j++) : ?>
+                <div class="<?= ($pizzas[$i][1][$j]["id"] % 2 == 1) ? 'pizzas1 row': 'pizzas2 row';?>">
                     <div class="col-lg-6 col-md-6 col-sm-3 col-3">
                         <div class="row">
-                        <h3 class="col-lg-12"><?= $simples[$i]["nome"]?></h3>
-                        <p class="descrição col-lg-12"><?= $simples[$i]["texto"]?></p>
+                        <h3 class="col-lg-12"><?= $pizzas[$i][1][$j]["nome"]?></h3>
+                        <p class="descrição col-lg-12"><?= $pizzas[$i][1][$j]["texto"]?></p>
                         </div>
                     </div>
                 
                     <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($simples[$i]["precoP"], 2, ',', '.');?></p>
+                        <p class="preço">R$<?= number_format($pizzas[$i][1][$j]["precoP"], 2, ',', '.');?></p>
                     </div>
                     <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($simples[$i]["precoM"], 2, ',', '.');?></p>
+                        <p class="preço">R$<?= number_format($pizzas[$i][1][$j]["precoM"], 2, ',', '.');?></p>
                     </div>
                     <div  class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($simples[$i]["precoG"], 2, ',', '.');?></p>
+                        <p class="preço">R$<?= number_format($pizzas[$i][1][$j]["precoG"], 2, ',', '.');?></p>
                     </div>
                     
                 </div>
-                <?php endfor ?>
-                
-                <div style="height: 30px;"></div>
-
-                <div class="tamanhos row" id=simples>
-                    <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
-                        <h2>Pizzas Especiais</h2>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Pequena</h3>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Média</h3>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Grande</h3>
-                    </div>
-                    
-                </div>
-
-                <?php for($i=0;$i < sizeof($especiais) ;$i++) :?>
-                <div class="<?= ($i % 2 == 1) ? 'pizzas1 row': 'pizzas2 row';?>">
-                    <div class="col-lg-6 col-md-6 col-sm-3 col-3">
-                        <div class="row">
-                        <h3 class="col-lg-12"><?= $especiais[$i]["nome"]?></h3>
-                        <p class="descrição col-lg-12"><?= $especiais[$i]["texto"]?></p>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($especiais[$i]["precoP"], 2, ',', '.');?></p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($especiais[$i]["precoM"], 2, ',', '.');?></p>
-                    </div>
-                    <div  class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($especiais[$i]["precoG"], 2, ',', '.');?></p>
-                    </div>
-                    
-                </div>
-                <?php endfor ?>
-
-                <div style="height: 30px;"></div>
-
-                <div class="tamanhos row" id=simples>
-                    <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
-                        <h2>Pizzas Doces</h2>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Pequena</h3>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Média</h3>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <h3>Grande</h3>
-                    </div>
-                    
-                </div>
-
-                <?php for($i=0;$i < sizeof($doces) ;$i++) :?>
-                <div class="<?= ($i % 2 == 0) ? 'pizzas1 row': 'pizzas2 row';?>">
-                    <div class="col-lg-6 col-md-6 col-sm-3 col-3">
-                        <div class="row">
-                        <h3 class="col-lg-12"><?= $doces[$i]["nome"]?></h3>
-                        <p class="descrição col-lg-12"><?= $doces[$i]["texto"]?></p>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($doces[$i]["precoP"], 2, ',', '.');?></p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($doces[$i]["precoM"], 2, ',', '.');?></p>
-                    </div>
-                    <div  class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($doces[$i]["precoG"], 2, ',', '.');?></p>
-                    </div>
-                    
-                </div>
-                <?php endfor ?>
+            <?php endfor ?>
+            <div style="height: 30px;"></div>
+        <?php endfor?>
+    </div>       
             
-                <div style="height: 30px;"></div>
-
-            </div>
 
 <?php include './footer.php' ?>
