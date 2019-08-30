@@ -1,6 +1,6 @@
-create database db_cardapio;
+create database db_site;
 
-use db_cardapio;
+use db_site;
 
 create table tb_tipoComida(
 	id_tipoComida int primary key auto_increment,
@@ -18,10 +18,6 @@ create table tb_prato(
     constraint fk_tipoComida foreign key(tipoComida_id) references tb_tipoComida(id_tipoComida)
 );
 
-
-create database db_cadastro;
-
-use db_cadastro;
 
 create table tb_login(
 	id_login int primary key auto_increment,
