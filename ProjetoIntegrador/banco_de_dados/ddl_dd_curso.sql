@@ -43,6 +43,11 @@ create table tb_telefone(
     constraint fk_professor foreign key(professor_id) references tb_professor(id_professor)
 );
 
+#ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'password';
+#default_authentication_plugin=caching_sha2_password  (comment line!)
+#default_authentication_plugin=mysql_native_password   (new line)
+/* https://stackoverflow.com/questions/50169576/mysql-8-0-11-error-connect-to-caching-sha2-password-the-specified-module-could-n */
+
 /*Criação da tabela disciplina */
 create table tb_disciplina(
 	id_disciplina int primary key auto_increment,
