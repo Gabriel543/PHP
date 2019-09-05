@@ -69,3 +69,17 @@ create table curso_disciplina(
 desc tb_curso;
 
 /* mysql -u root -p */
+
+/* alterar estrutura da tabela disciplina */
+alter table tb_disciplina add column nome varchar(150) not null after id_disciplina;
+alter table tb_disciplina drop foreign key fk_professor_dis;
+alter table tb_disciplina drop column professor_id;
+
+/* Criação da tabela professor_disciplina*/
+create table professor_disciplina(
+	professor_id int not null,
+    disciplina_id int not null,
+    primary key (professor_id,disciplina_id),
+    constraint fk_professor_disciplina foreign key(professor_id) references tb_professor(id_professor),
+    constraint fk_disciplina_professor foreign key(disciplina_id) references tb_disciplina(id_disciplina)
+);

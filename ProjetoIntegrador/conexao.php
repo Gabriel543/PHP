@@ -27,7 +27,7 @@
         exit;
     }
 
-    echo "Conexão estabelecida com sucesso.<br>";
-    echo "Informações do servidor: " . mysqli_get_host_info($con);
+    //echo "Conexão estabelecida com sucesso.<br>";
+    //echo "Informações do servidor: " . mysqli_get_host_info($con);
 
-    mysqli_close($con);
+    //mysqli_close($con);
