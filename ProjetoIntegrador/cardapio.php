@@ -347,7 +347,7 @@
     </div>
        
     <div class="col">
-        <?php for($i=0;$i<sizeof($pizzas);$i++) : ?>
+        <?php /* for($i=0;$i<sizeof($pizzas);$i++) : ?>
             <div class="tamanhos row" id=simples>
                 <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
                     <h2><?=$pizzas[$i][0] ?></h2>
@@ -384,7 +384,61 @@
                 </div>
             <?php endfor ?>
             <div style="height: 30px;"></div>
-        <?php endfor?>
+        <?php endfor */?>
+
+        <?php  
+            require('./conexao.php');
+            $query = "select * from tb_tipoComida";
+            $result = $con -> query($query);
+            if($result->num_rows > 0) :
+                     
+        ?>
+            <?php while($row = $result->fetch_assoc()) : 
+                $query2 = "select * from tb_prato where tipoComida_id=" .$row['id_tipoComida'];
+                $result2 = $con -> query($query2);
+                if($result2->num_rows > 0) :
+            ?>
+            <div class="tamanhos row" id=simples>
+                <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
+                    <h2><?=$row['nome'] ?></h2>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                    <h3>Pequena</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                    <h3>Média</h3>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                    <h3>Grande</h3>
+                </div>
+            </div>
+            
+                <?php while($row2 = $result2->fetch_assoc()) : ?>
+                    <div class="<?= ($row2['id_prato'] % 2 == 1) ? 'pizzas1 row': 'pizzas2 row';?>">
+                        <div class="col-lg-6 col-md-6 col-sm-3 col-3">
+                            <div class="row">
+                            <h3 class="col-lg-12"><?= $row2['nomePrato']?></h3>
+                            <p class="descrição col-lg-12"><?= $row2['descricaoPrato']?></p>
+                            </div>
+                        </div>
+                    
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                            <p class="preço">R$<?= number_format($row2['precoP'], 2, ',', '.');?></p>
+                        </div>
+                        <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                            <p class="preço">R$<?= number_format($row2["precoM"], 2, ',', '.');?></p>
+                        </div>
+                        <div  class="col-lg-2 col-md-2 col-sm-3 col-3">
+                            <p class="preço">R$<?= number_format($row2["precoG"], 2, ',', '.');?></p>
+                        </div>
+                        
+                    </div>
+                <?php endwhile ?>
+            <?php endif ?>
+            <div style="height: 30px;"></div>
+        <?php endwhile ?>
+<?php endif ?>
+
     </div>       
             
 

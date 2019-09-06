@@ -5,11 +5,11 @@
         $nome = filter_input(INPUT_POST, "txtNome") ?? "";
         
         if(createTipo($nome)) {
-            echo "Tipo gravado com sucesso";
+            header('Location: cadastrosCardapio.php');
         } else {
             echo "Falha ao gravar o tipo";
         }
     } else {
         # redirecionamento de página
-        header('Location: cadastrar_curso.php');
+        header('Location: cadastrosCardapio.php');
     }

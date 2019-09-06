@@ -5,7 +5,7 @@
     define("SERVER", "localhost");
     define("USER", "root");
     define("PASS", "");
-    define("DB", "db_curso");
+    define("DB", "db_site");
     define("PORT", 3306);
 
     
