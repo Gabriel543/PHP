@@ -24,4 +24,22 @@
 
     }
 
+    function getPrato(){
+        $link = abreConexao();
+        $query = "select * from tb_prato ORDER BY id_tipoComida ASC;";
+        try{ // Tenta executar
+            $rs = mysqli_query($link,$query);
+            $listaPrato = Array();
+            while($linha = mysqli_fetch_assoc($rs)){
+                array_push($listaPrato,$linha);
+            }
+            return $listaPrato;
+        } catch(\Throwable $th) { // entra nesse bloco caso ocorra erro
+            throw new \Exception("Erro ao ler no banco", 1);
+            return Array();
+        } finally { // executa sempre indiferente de funcionar ou ocorrer um erro
+            mysqli_close($link);
+        }
+    }
+
     

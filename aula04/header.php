@@ -4,7 +4,7 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <script src="https://kit.fontawesome.com/e8a1f8d9cf.js"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
@@ -24,13 +24,24 @@
                 </li>
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Gestão de Produtos
+                    Gestão de Cursos
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="cadastrar.php">Cadastro</a>
-                        <a class="dropdown-item" href="listar.php">Listagem</a>
+                        <h6 class="dropdown-header">Cursos</h6>
+                        <a class="dropdown-item" href="cadastrar_curso.php">Cadastro</a>
+                        <a class="dropdown-item" href="listar_curso.php">Listagem</a>
                         <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="localizar.php">Localizar</a>
+                        <h6 class="dropdown-header">Disciplinas</h6>
+                        <a class="dropdown-item" href="cadastrar_disciplina.php">Cadastro</a>
+                        <a class="dropdown-item" href="listar_disciplina.php">Listagem</a>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="dropdown-header">Professores</h6>
+                        <a class="dropdown-item" href="cadastrar_professor.php">Cadastro</a>
+                        <a class="dropdown-item" href="listar_professor.php">Listagem</a>
+                        <div class="dropdown-divider"></div>
+                        <h6 class="dropdown-header">Alunos</h6>
+                        <a class="dropdown-item" href="cadastrar_aluno.php">Cadastro</a>
+                        <a class="dropdown-item" href="listar_aluno.php">Listagem</a>
                     </div>
                 </li>
                 <li class="nav-item">

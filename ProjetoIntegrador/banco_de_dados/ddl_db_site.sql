@@ -1,10 +1,9 @@
-create database db_site;
-
+create database db_site CHARACTER SET utf8;
 use db_site;
 
 create table tb_tipoComida(
 	id_tipoComida int primary key auto_increment,
-    nome varchar(150) not null
+    nome varchar(150) not null unique
 );
 
 create table tb_prato(

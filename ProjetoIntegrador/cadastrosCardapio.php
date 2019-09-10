@@ -1,4 +1,7 @@
-<?php include './header.php' ?>
+<?php 
+    include './header.php';
+    include './consulta_tipoComida.php'; 
+?>
 <style>
     select:invalid { color: gray; }
 </style>
@@ -20,16 +23,10 @@
                     <label for="idtipo">Tipo</label>
                     <select name="txtTipo" id="idtipo" class="form-control" required>
                             <option value="" default hidden disable >Informe o tipo</option>
-                            <?php 
-                                require('./conexao.php');
-                                $query = "select * from tb_tipoComida";
-                                $result = $con -> query($query);
-                                if ($result->num_rows > 0) {
-                                    while($row = $result->fetch_assoc()) {
-                                       echo "<option value=".$row['id_tipoComida'].'>' .$row['nome'] ."</option>";
-                                    }
-                                }
-                            ?>
+                            <?php foreach (listaTipo() as $tipo) : ?>
+                                <option value="<?= $tipo['id_tipoComida'] ?>"><?= $tipo['nome'] ?></option>       
+                            <?php endforeach; ?>
+                                
                         </select>
                 </div>
                 <div class="form-group">

@@ -1,6 +1,6 @@
-insert into tb_tipocomida(nome) values('Pizzas Simples');
-insert into tb_tipocomida(nome) values('Pizzas Especiais');
-insert into tb_tipocomida(nome) values('Pizzas Doces');
+insert into tb_tipoComida(nome) values('Pizzas Simples');
+insert into tb_tipoComida(nome) values('Pizzas Especiais');
+insert into tb_tipoComida(nome) values('Pizzas Doces');
 
 insert into tb_prato values(null,'Mussarela','Molho de tomate e mussarela.',29,33,40,1);
 insert into tb_prato values(null,'Calabresa','Molho de tomate, mussarela e calabresa.',29,33,40,1);
@@ -26,3 +26,5 @@ insert into tb_prato values(null,'Banana','Mozzarella, banana, açúcar e canela
 insert into tb_prato values(null,'Sensação','Requeijão cremoso, recheio de morango, chocolate ao leite e morangos.',36,41,49,3);
 insert into tb_prato values(null,'Nutella','Creme de leite, nutella, avelã picada.',36,41,49,3);
 insert into tb_prato values(null,'Brownie','Creme de leite, requeijão cremoso, chocolate em lasca, brownie em cubo.',36,41,49,3);
+
+select * from tb_tipoComida ORDER BY id_tipoComida ASC;
