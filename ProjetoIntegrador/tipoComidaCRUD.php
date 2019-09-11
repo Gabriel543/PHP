@@ -1,5 +1,5 @@
 <?php
-    require('./conexao.php');
+    require_once('./conexao.php');
 
     function createTipo($nome){
         $link = abreConexao();

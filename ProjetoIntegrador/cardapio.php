@@ -1,7 +1,8 @@
 <?php 
-    include './header.php';
-    include './consulta_tipoComida.php'; 
-    include './consulta_prato.php';  
+    include_once './header.php';
+    include_once './consulta_tipoComida.php'; 
+    include_once './consulta_prato.php';
+    $cont = 0;  
 ?>
     <style>
         div.col div.tamanhos div h2{
@@ -142,208 +143,6 @@
       
     </style>
 
-    <?php
-        $simples = array(
-            array(
-                "id" => 1,
-                "nome" => "Mussarela",
-                "texto" => "Molho de tomate e mussarela.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 2,
-                "nome" => "Calabresa",
-                "texto" => "Molho de tomate, mussarela e calabresa.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 3,
-                "nome" => "Presunto",
-                "texto" => "Presunto ,molho de tomate e mussarela.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 4,
-                "nome" => "Margherita",
-                "texto" => "Molho de tomate, mussarela, tomates e manjericão.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 5,
-                "nome" => "Frango c/ Catupiry",
-                "texto" => "Molho de tomate, mussarela, frango desfiado com catupiry.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 6,
-                "nome" => "Portuguesa",
-                "texto" => "Molho de tomate, presunto, mussarela, ovos, cebola e azeitonas.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 7,
-                "nome" => "Carne Seca c/ Catupiry",
-                "texto" => "Molho de tomate, mussarela, carne seca desfiada com catupiry.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 8,
-                "nome" => "Bacon",
-                "texto" => "Molho de tomate, mussarela e bacon.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            ),
-            array(
-                "id" => 9,
-                "nome" => "Americana",
-                "texto" => "Molho de tomate, mussarela, bacon, calabresa, ovos e cebola.",
-                "precoP" => 29,00,
-                "precoM" => 33,00,
-                "precoG" => 40,00,
-            )
-        );
-
-        $especiais = array(
-            array(
-                "id" => 10,
-                "nome" => "Milão",
-                "texto" => "Presunto cozido picado, mussarela, calabresa artesanal moída, fatias de cebola branca e azeitona verde fatiada.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 11,
-                "nome" => "Cacciatore",
-                "texto" => "Queijo parmesão, calabresa de javali e pimenta dedo-de-moça. Finalizada com folhas frescas de alecrim.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 12,
-                "nome" => "Cinco Queijos",
-                "texto" => "Mozzarella, provolone, gorgonzola, requeijão cremoso e parmesão.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 13,
-                "nome" => "Caprese",
-                "texto" => "Mozzarella, fatias de tomate fresco, mozzarella de búfala em bola. Finalizada com pesto de azeitonas portuguesa e manjericão.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 14,
-                "nome" => "Baiana",
-                "texto" => "Mozzarella, calabresa artesanal moída, pimenta calabresa, tomate fresco picado, alho frito e azeitona portuguesa.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 15,
-                "nome" => "Burrata",
-                "texto" => "Mozzarella de búfala, alho poró e queijo burrata. Finalizada com fatias de tomate cereja.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 16,
-                "nome" => "Di Parma",
-                "texto" => "Mozzarella, fatias de tomate fresco. Finalizada com lâminas de presunto parma.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 17,
-                "nome" => "Shitake",
-                "texto" => "Mozzarella, Delicioso Mix de Cogumelos e Alho Poró.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 18,
-                "nome" => "Farnese",
-                "texto" => "Mozzarella, tomate seco, lâminas de presunto parma e rúcula fresca.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            )
-        );
-
-        $doces = array(
-            array(
-                "id" => 19,
-                "nome" => "Banana",
-                "texto" => "Mozzarella, banana, açúcar e canela.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 20,
-                "nome" => "Sensação",
-                "texto" => "Requeijão cremoso, recheio de morango, chocolate ao leite e morangos.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 21,
-                "nome" => "Nutella",
-                "texto" => "Creme de leite, nutella, avelã picada.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            ),
-            array(
-                "id" => 22,
-                "nome" => "Brownie",
-                "texto" => "Creme de leite, requeijão cremoso, chocolate em lasca, brownie em cubo.",
-                "precoP" => 36,00,
-                "precoM" => 41,00,
-                "precoG" => 49,00,
-            )
-        );
-
-        $pizzas = array(
-            array(
-                "Pizzas Simples"
-            ),
-            array(
-                "Pizzas Especiais"
-            ),
-            array(
-                "Pizzas Doces"
-            )
-        );
-        array_push($pizzas[0],$simples);
-        array_push($pizzas[1],$especiais);
-        array_push($pizzas[2],$doces);
-    ?>
-
     <div class="row">
         <div class="col-sm-12 col-md-12">
             <h1 class="jumbotron">Cardápio</h1>
@@ -351,66 +150,58 @@
     </div>
        
     <div class="col">
-        <?php /* for($i=0;$i<sizeof($pizzas);$i++) : ?>
-            <div class="tamanhos row" id=simples>
-                <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
-                    <h2><?=$pizzas[$i][0] ?></h2>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <h3>Pequena</h3>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <h3>Média</h3>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <h3>Grande</h3>
-                </div>
-            </div>
-            <?php for($j=0;$j<sizeof($pizzas[$i][1]);$j++) : ?>
-                <div class="<?= ($pizzas[$i][1][$j]["id"] % 2 == 1) ? 'pizzas1 row': 'pizzas2 row';?>">
-                    <div class="col-lg-6 col-md-6 col-sm-3 col-3">
-                        <div class="row">
-                        <h3 class="col-lg-12"><?= $pizzas[$i][1][$j]["nome"]?></h3>
-                        <p class="descrição col-lg-12"><?= $pizzas[$i][1][$j]["texto"]?></p>
-                        </div>
-                    </div>
-                
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($pizzas[$i][1][$j]["precoP"], 2, ',', '.');?></p>
-                    </div>
-                    <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($pizzas[$i][1][$j]["precoM"], 2, ',', '.');?></p>
-                    </div>
-                    <div  class="col-lg-2 col-md-2 col-sm-3 col-3">
-                        <p class="preço">R$<?= number_format($pizzas[$i][1][$j]["precoG"], 2, ',', '.');?></p>
-                    </div>
-                    
-                </div>
-            <?php endfor ?>
-            <div style="height: 30px;"></div>
-        <?php endfor */?>
-
         <?php foreach (listaTipo() as $tipo) : ?>
-            <?php if(TRUE) : ?>
-            <div class="tamanhos row" id=simples>
-                <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
-                    <h2><?=$tipo['nome'] ?></h2>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <h3>Pequena</h3>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <h3>Média</h3>
-                </div>
-                <div class="col-lg-2 col-md-2 col-sm-3 col-3">
-                    <h3>Grande</h3>
-                </div>
-            </div>
+            <?php 
+                $first = TRUE;
+                $existe = FALSE;
+             ?>
+            <?php foreach(listaPrato() as $prato) : ?>
+                <?php if($tipo['id_tipoComida'] == $prato['tipoComida_id']) : ?>
+                    <?php if($first==TRUE) : ?>
+                        <div class="tamanhos row" id=simples>
+                            <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
+                                <h2><?=$tipo['nome'] ?></h2>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                                <h3>Pequena</h3>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                                <h3>Média</h3>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                                <h3>Grande</h3>
+                            </div>
+                        </div>
+                        <?php 
+                            $first = FALSE; 
+                            $existe = TRUE;
+                        ?>    
+                    <?php endif ?> 
+                        <div class="<?= ($cont % 2 == 0) ? 'pizzas1 row': 'pizzas2 row';?>">
+                            <div class="col-lg-6 col-md-6 col-sm-3 col-3">
+                                <div class="row">
+                                <h3 class="col-lg-12"><?= $prato['nomePrato']?></h3>
+                                <p class="descrição col-lg-12"><?= $prato['descricaoPrato']?></p>
+                                </div>
+                            </div>
+                        
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                                <p class="preço">R$<?= number_format($prato['precoP'], 2, ',', '.');?></p>
+                            </div>
+                            <div class="col-lg-2 col-md-2 col-sm-3 col-3">
+                                <p class="preço">R$<?= number_format($prato["precoM"], 2, ',', '.');?></p>
+                            </div>
+                            <div  class="col-lg-2 col-md-2 col-sm-3 col-3">
+                                <p class="preço">R$<?= number_format($prato["precoG"], 2, ',', '.');?></p>
+                            </div> 
+                        </div>
+                    <?php $cont++; ?> 
+                <?php endif ?>           
+            <?php endforeach ?>
+            <?php if($existe ==TRUE) : ?>
+                <div style="height: 30px;"></div>
             <?php endif ?>
-
         <?php endforeach; ?>
-        
-
     </div>       
             
 

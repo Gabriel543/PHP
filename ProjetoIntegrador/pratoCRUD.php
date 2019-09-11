@@ -1,5 +1,5 @@
 <?php
-    require('./conexao.php');
+    require_once('./conexao.php');
 
     function createPrato($nome,$descricao,$precoP,$precoM,$precoG,$tipo){
         $link = abreConexao();
@@ -19,14 +19,9 @@
             mysqli_close($link);
         }
     }
-
-    function getID(){
-
-    }
-
     function getPrato(){
         $link = abreConexao();
-        $query = "select * from tb_prato ORDER BY id_tipoComida ASC;";
+        $query = "select * from tb_prato ORDER BY id_prato ASC;";
         try{ // Tenta executar
             $rs = mysqli_query($link,$query);
             $listaPrato = Array();
