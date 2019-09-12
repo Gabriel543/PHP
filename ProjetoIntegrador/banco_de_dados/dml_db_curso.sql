@@ -19,7 +19,7 @@ insert into tb_curso(nome) values('Linguagem de Script para Web'),('Consulta e g
 select id_curso, nome from tb_curso;
 
 /* select de todos cursos(sem selecionar os campos) da tabela tb_curso */
-select * from tb_curso;
+select * from tb_curso;professor_disciplina
 
 /* select de todos cursos(campos especificos) da tabela tb_curso */
 select nome from tb_curso;
@@ -46,3 +46,5 @@ update tb_curso set nome = 'Linguagem de Programação' where id_curso = 3;
 
 /* Delete de curso na tabela tb_curso */
 delete from tb_curso where id_curso = 2;
+
+select nome,cpf,numero as 'telefone' from tb_professor inner join tb_telefone on tb_telefone.professor_id = tb_professor.id_professor;

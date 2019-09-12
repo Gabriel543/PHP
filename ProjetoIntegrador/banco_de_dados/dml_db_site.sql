@@ -28,3 +28,6 @@ insert into tb_prato values(null,'Nutella','Creme de leite, nutella, avelã pica
 insert into tb_prato values(null,'Brownie','Creme de leite, requeijão cremoso, chocolate em lasca, brownie em cubo.',36,41,49,3);
 
 select * from tb_tipoComida ORDER BY id_tipoComida ASC;
+
+select * from tb_prato ORDER BY id_prato ASC;
+

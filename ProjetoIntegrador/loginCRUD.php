@@ -5,12 +5,12 @@
 
 
 # Função responsável por inserir os dados no banco
-function createCurso($nome) {
+function createLogin($nomeLogin,$email,$senha,$nomeCompleto) {
     // recebe o retorno da função com a conexão aberta
     $link = abreConexao();
 
     // variavel responsável por definir a query SQL a ser disparada no banco
-    $query = "insert into tb_curso(nome) values ('{$nome}')";
+    $query = "insert into tb_login values({null},'{$email}','{$nomeLogin}','{$senha}','{$nomeCompleto}')";
     try{ // Tenta executar
         if(mysqli_query($link, $query)) {
             return true;
@@ -43,7 +43,7 @@ function getCursos(){
     }
 }
 
-function deleteCurso($id){
+function deleteLogin($id){
     // recebe o retorno da função com a conexão aberta
     $link = abreConexao();
 
@@ -61,7 +61,7 @@ function deleteCurso($id){
     }
 }
 
-function updateCurso($id, $nome){
+function updateLogin($id, $nome){
     
     $link = abreConexao();
 

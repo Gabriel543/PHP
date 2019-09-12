@@ -14,7 +14,7 @@
         // entregar(retornar) o contexto da conexão
         $link = mysqli_connect(SERVER, USER, PASS, DB, PORT);
         // set encode UTF-8
-        mysqli_set_charset($link, "utf-8");
+        mysqli_set_charset($link, "utf8");
         return $link;
     }
 
