@@ -6,14 +6,18 @@
     $preco = $_POST['txtPreco'];
     $imagem = $_POST['flImg'];*/
 
+    include_once('./disciplinaCRUD.php');
+
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
-        $nome = filter_input(INPUT_POST, "txtNome") ?? "";
-        $quantidade = filter_input(INPUT_POST, "txtQtd");
-        $preco = filter_input(INPUT_POST, "txtPreco");
-        $imagem = filter_input(INPUT_POST, "flImg");
-    
-        echo "$nome<br>$quantidade<br>$preco<br>$imagem<br>";
+        $nome= filter_input(INPUT_POST, "txtNome") ?? "";
+        $descricão = filter_input(INPUT_POST, "txtDescricao");
+        if(createDisciplina($nome,$descricão)){
+            echo "Disciplina cadastrada com sucesso";
+        }else{
+            echo "Erro ao cadastrar .";
+        }
+
     } else {
         # redirecionamento de página
-        header('Location: cadastrar.php');
+        header('Location: cadastrar_disciplina.php');
     }

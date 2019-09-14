@@ -5,12 +5,13 @@
 
 
 # Função responsável por inserir os dados no banco
-function createLogin($nomeLogin,$email,$senha,$nomeCompleto) {
+function createLogin($nomeLogin,$email,$senha) {
     // recebe o retorno da função com a conexão aberta
     $link = abreConexao();
 
     // variavel responsável por definir a query SQL a ser disparada no banco
-    $query = "insert into tb_login values({null},'{$email}','{$nomeLogin}','{$senha}','{$nomeCompleto}')";
+    $query = "insert into tb_login values(null,'{$email}','{$nomeLogin}','{$senha}',null)";
+
     try{ // Tenta executar
         if(mysqli_query($link, $query)) {
             return true;
@@ -23,9 +24,9 @@ function createLogin($nomeLogin,$email,$senha,$nomeCompleto) {
     }
 }
 
-function getCursos(){
+function getUsuarios(){
     $link = abreConexao();
-    $query = "select * from tb_curso";
+    $query = "select id_login,nomeLogin,email from tb_curso";
     try{ // Tenta executar
         $rs = mysqli_query($link,$query);
         $listaCursos = Array();
@@ -41,6 +42,27 @@ function getCursos(){
     } finally { 
         mysqli_close($link);
     }
+}
+
+function checkLogin(){
+    $link = abreConexao();
+    $query = "select id_login,nomeLogin,email from tb_curso";
+    try{ // Tenta executar
+        $rs = mysqli_query($link,$query);
+        $listaCursos = Array();
+        //mysql_fetch  -> assoc,row,array
+        while($linha = mysqli_fetch_assoc($rs)){
+            array_push($listaCursos,$linha);
+        }
+
+        return $listaCursos;
+    } catch(\Throwable $th) { 
+        throw new \Exception("Erro ao listar no banco", 1);
+        return Array();
+    } finally { 
+        mysqli_close($link);
+    }
+}
 }
 
 function deleteLogin($id){
@@ -61,11 +83,11 @@ function deleteLogin($id){
     }
 }
 
-function updateLogin($id, $nome){
+function updateLogin($email,$senha){
     
     $link = abreConexao();
 
-    $query = "update tb_curso set nome='{$nome}' where id_curso = {$id}";
+    $query = "update tb_login set senha='{$senha}' where email = {$email}";
     try{ // Tenta executar
         if(mysqli_query($link, $query)) {
             return true;

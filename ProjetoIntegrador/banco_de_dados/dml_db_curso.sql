@@ -48,3 +48,5 @@ update tb_curso set nome = 'Linguagem de Programação' where id_curso = 3;
 delete from tb_curso where id_curso = 2;
 
 select nome,cpf,numero as 'telefone' from tb_professor inner join tb_telefone on tb_telefone.professor_id = tb_professor.id_professor;
+
+alter table tb_disciplina add column nome text not null;

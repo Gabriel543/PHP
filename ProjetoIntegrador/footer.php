@@ -97,7 +97,12 @@
                     </button>
                   </div>
                   <div class="modal-body">
-                    <form  method="post" action="cadastroFormulario.php">
+                    <form  method="post" action="registrar_login.php">
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Insira o nome de Login</label>
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="Seu nome" name="txtNome" required>
+                      </div>
+                      <div class=
                       <div class="form-group">
                         <label for="exampleInputEmail1">Endereço de email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email" name="txtEmail" required>
