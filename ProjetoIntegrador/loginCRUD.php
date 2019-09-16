@@ -26,7 +26,7 @@ function createLogin($nomeLogin,$email,$senha) {
 
 function getUsuarios(){
     $link = abreConexao();
-    $query = "select id_login,nomeLogin,email from tb_curso";
+    $query = "select id_login,nomeLogin,email from tb_login";
     try{ // Tenta executar
         $rs = mysqli_query($link,$query);
         $listaCursos = Array();
@@ -63,7 +63,7 @@ function checkLogin(){
         mysqli_close($link);
     }
 }
-}
+
 
 function deleteLogin($id){
     // recebe o retorno da função com a conexão aberta

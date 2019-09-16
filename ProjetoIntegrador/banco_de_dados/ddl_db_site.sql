@@ -1,4 +1,5 @@
-create database db_site CHARACTER SET utf8;
+create database db_site;
+
 use db_site;
 
 create table tb_tipoComida(
@@ -25,4 +26,5 @@ create table tb_login(
     senha varchar(12) not null,
     nomeCompleto varchar(150)
 );
+
 

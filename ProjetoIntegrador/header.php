@@ -38,6 +38,19 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="#login" data-toggle="modal"><span style="color: Tomato;"><i class="fas fa-sign-in-alt"></i></span> Login</a>
                     </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Gestão de Banco
+                        </a>
+                        <div class="dropdown-menu navbar-inverse bg-light bg-dark" aria-labelledby="navbarDropdown">
+                            <h3 class="dropdown-header"><span style="color: Tomato;">Cardapio</span></h3>
+                            <a class="dropdown-item" href="cadastrosCardapio.php">Cadastro</a>
+                            <a class="dropdown-item" href="listarCardapio.php">Listagem</a>
+                            <div class="dropdown-divider" style="border-color:grey;"></div>
+                            <h3 class="dropdown-header"><span style="color:Tomato;">Usuarios</span></h3>
+                            <a class="dropdown-item" href="listarUsuarios.php">Listagem</a>
+                        </div>
+                    </li>
 
                 </ul>
               </div>

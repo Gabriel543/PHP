@@ -1,6 +1,6 @@
-insert into tb_tipoComida(nome) values('Pizzas Simples');
-insert into tb_tipoComida(nome) values('Pizzas Especiais');
-insert into tb_tipoComida(nome) values('Pizzas Doces');
+insert into tb_tipocomida(nome) values('Pizzas Simples');
+insert into tb_tipocomida(nome) values('Pizzas Especiais');
+insert into tb_tipocomida(nome) values('Pizzas Doces');
 
 insert into tb_prato values(null,'Mussarela','Molho de tomate e mussarela.',29,33,40,1);
 insert into tb_prato values(null,'Calabresa','Molho de tomate, mussarela e calabresa.',29,33,40,1);
@@ -27,7 +27,12 @@ insert into tb_prato values(null,'Sensação','Requeijão cremoso, recheio de mo
 insert into tb_prato values(null,'Nutella','Creme de leite, nutella, avelã picada.',36,41,49,3);
 insert into tb_prato values(null,'Brownie','Creme de leite, requeijão cremoso, chocolate em lasca, brownie em cubo.',36,41,49,3);
 
-select * from tb_tipoComida ORDER BY id_tipoComida ASC;
+insert into tb_login values(null,'gabriel@gmail.com','Gabriel531','1234','Gabriel Ramalho Braga');
 
-select * from tb_prato ORDER BY id_prato ASC;
+select * from tb_tipoComida;
 
+select * from tb_prato;
+
+select * from tb_prato where tipoComida_id = 7 ORDER BY id_prato ASC;
+
+update tb_prato set nomePrato='teste',descricaoPrato='teste',precoP = 123,precoM = 123,precoG=123,tipoComida_id=7 where id_prato = 25;

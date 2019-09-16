@@ -155,8 +155,8 @@
                 $first = TRUE;
                 $existe = FALSE;
              ?>
-            <?php foreach(listaPrato() as $prato) : ?>
-                <?php if($tipo['id_tipoComida'] == $prato['tipoComida_id']) : ?>
+            <?php foreach(listaPratoByTipo($tipo['id_tipoComida']) as $prato) : ?>
+                
                     <?php if($first==TRUE) : ?>
                         <div class="tamanhos row" id=simples>
                             <div  class="col-lg-6 col-md-6 col-sm-3 col-3">
@@ -196,7 +196,7 @@
                             </div> 
                         </div>
                     <?php $cont++; ?> 
-                <?php endif ?>           
+                         
             <?php endforeach ?>
             <?php if($existe ==TRUE) : ?>
                 <div style="height: 30px;"></div>

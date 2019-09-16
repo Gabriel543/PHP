@@ -3,3 +3,6 @@
     function listaPrato(){
       return getPrato();
     }
+    function listaPratoByTipo($id){
+      return getPratoByTipo($id);
+    }
