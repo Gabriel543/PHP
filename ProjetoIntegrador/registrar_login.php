@@ -1,4 +1,5 @@
 <?php
+    session_start();
     require_once('./loginCRUD.php');
     if($_SERVER['REQUEST_METHOD'] === 'POST') {
         $nomeLogin = filter_input(INPUT_POST, "txtNome") ?? "";
@@ -7,9 +8,9 @@
         $senhaCopia = filter_input(INPUT_POST, "txtSenhaCopia");
         if($senhaOriginal == $senhaCopia){
             if(createLogin($nomeLogin,$email,$senhaOriginal)){
-                echo "Login gravado com sucesso.";
+                $_SESSION['msg'] =  "Login gravado com sucesso.";
             }else{
-                echo "Erro ao gravar Login.";
+                $_SESSION['msg'] = "Erro ao gravar Login.";
             }
         }else{
             echo 'Coloque a mesma senha das duas caixas de texto.';

@@ -21,10 +21,9 @@ create table tb_prato(
 
 create table tb_login(
 	id_login int primary key auto_increment,
-    email varchar(150) not null,
-    nomeLogin varchar(30) not null,
-    senha varchar(12) not null,
-    nomeCompleto varchar(150)
+    email varchar(150) not null unique,
+    nomeLogin varchar(30) not null unique,
+    senha varchar(250) not null
 );
 
 

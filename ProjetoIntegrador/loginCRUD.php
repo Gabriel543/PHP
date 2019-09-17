@@ -10,8 +10,8 @@ function createLogin($nomeLogin,$email,$senha) {
     $link = abreConexao();
 
     // variavel responsável por definir a query SQL a ser disparada no banco
-    $query = "insert into tb_login values(null,'{$email}','{$nomeLogin}','{$senha}',null)";
-
+    $query = "insert into tb_login values(null,'{$email}','{$nomeLogin}',Md5('{$senha}'))";
+    
     try{ // Tenta executar
         if(mysqli_query($link, $query)) {
             return true;
@@ -44,21 +44,23 @@ function getUsuarios(){
     }
 }
 
-function checkLogin(){
+function checkLogin($email,$senha){
     $link = abreConexao();
-    $query = "select id_login,nomeLogin,email from tb_curso";
+    $query = "select id_login,email,nomeLogin from tb_login where email = '{$email}' and senha = Md5('{$senha}')";
+    echo $query;
+    
     try{ // Tenta executar
         $rs = mysqli_query($link,$query);
-        $listaCursos = Array();
+        
         //mysql_fetch  -> assoc,row,array
-        while($linha = mysqli_fetch_assoc($rs)){
-            array_push($listaCursos,$linha);
+        if($linha = mysqli_fetch_assoc($rs)){
+            return $linha;
         }
 
-        return $listaCursos;
+        return NULL;
     } catch(\Throwable $th) { 
         throw new \Exception("Erro ao listar no banco", 1);
-        return Array();
+        return NULL;
     } finally { 
         mysqli_close($link);
     }

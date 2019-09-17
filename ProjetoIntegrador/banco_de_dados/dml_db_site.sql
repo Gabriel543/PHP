@@ -36,3 +36,7 @@ select * from tb_prato;
 select * from tb_prato where tipoComida_id = 7 ORDER BY id_prato ASC;
 
 update tb_prato set nomePrato='teste',descricaoPrato='teste',precoP = 123,precoM = 123,precoG=123,tipoComida_id=7 where id_prato = 25;
+
+update tb_login set senha=Md5('1234') where id_login = 1;
+update tb_login set senha=Md5('4321') where id_login = 2;
+select id_login,email,nomeLogin from tb_login where email = 'gabriel@gmail.com' and senha=Md5('1234');

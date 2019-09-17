@@ -1,3 +1,8 @@
+<?php 
+    /* Inicia a sessão nos arquivos */ 
+    session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -10,6 +15,7 @@
         <script src="Recursos/JavaScript/myVar.js"></script>
     </head>
     <link rel="stylesheet" type="text/css" href="Recursos/CSS/style.css">
+    
     
     <body onresize="detectResize();">
         <main class="container">
@@ -34,9 +40,9 @@
                     <li class="nav-item active">
                         <a class="nav-link" href="contato.php"><span style="color: Tomato;"><i class="fas fa-comment"></i></span> Contato</a>
                     </li>
-
+                    <?php if(isset($_SESSION['login'])) :?>
                     <li class="nav-item active">
-                        <a class="nav-link" href="#login" data-toggle="modal"><span style="color: Tomato;"><i class="fas fa-sign-in-alt"></i></span> Login</a>
+                        <a class="nav-link" href="logout.php"><span style="color: Tomato;"><i class="fas fa-sign-in-alt"></i></span> Logout</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -51,6 +57,12 @@
                             <a class="dropdown-item" href="listarUsuarios.php">Listagem</a>
                         </div>
                     </li>
+                    <?php else :?>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="#login" data-toggle="modal"><span style="color: Tomato;"><i class="fas fa-sign-in-alt"></i></span> Login</a>
+                    </li>
+                    
+                    <?php endif ?>
 
                 </ul>
               </div>

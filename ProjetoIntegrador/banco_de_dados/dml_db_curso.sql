@@ -50,3 +50,25 @@ delete from tb_curso where id_curso = 2;
 select nome,cpf,numero as 'telefone' from tb_professor inner join tb_telefone on tb_telefone.professor_id = tb_professor.id_professor;
 
 alter table tb_disciplina add column nome text not null;
+
+/** Funçãoes no banco **/
+/* limit -  serve para limitar a quantidade de linhas(registros) a serem exibidas */
+select * from tb_disciplina limit 3;
+
+/* count - serve para contar */
+select count(*) from tb_disciplina;
+
+/* ordenação */
+select * from tb_disciplina order by nome ASC;
+select * from tb_disciplina order by nome ASC;
+
+/* distinção */
+
+select distinct descricao  from tb_disciplina order by nome asc;
+
+/* Md5 - criptografia. Muito utilizado para senhas simples */
+
+select Md5('senha@123');
+
+insert into tb_login(username,password) values ('admin',md5('Senha@123'));
+

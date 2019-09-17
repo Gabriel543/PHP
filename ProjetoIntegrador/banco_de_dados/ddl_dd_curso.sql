@@ -83,3 +83,9 @@ create table professor_disciplina(
     constraint fk_professor_disciplina foreign key(professor_id) references tb_professor(id_professor),
     constraint fk_disciplina_professor foreign key(disciplina_id) references tb_disciplina(id_disciplina)
 );
+
+create table tb_login(
+	id_login int primary key auto_increment,
+    username varchar(20) not null unique,
+    password varchar(255) not null
+);

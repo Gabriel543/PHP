@@ -59,8 +59,8 @@
                   </div>
                   <div class="modal-body">
                       
-                    <form  method="post" action="loginFormulario.php">
-                      <div class="form-group" action="loginFormulario.php">
+                    <form  method="post" action="login.php" id="form_login">
+                      <div class="form-group">
                         <label for="exampleInputEmail1">Endereço de email</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Seu email" name="txtEmail" required>
                         <small id="emailHelp" class="form-text text-muted">Nunca vamos compartilhar seu email, com ninguém.</small>
@@ -75,13 +75,13 @@
                       </div>
                       <button type="submit" class="btn btn-primary">Logar</button>
                     </form>
-                      
+                   <small class="text-muted"><?= isset($_SESSION['msg']) ? $_SESSION['msg'] : "" ?></small>
+                   <?php unset($_SESSION['msg']); ?> 
                   </div>
                   <div class="modal-footer">
                       
-                        <button type="button" class="btn btn-secondary" data-toggle="modal" href="#esqueciasenha" data-dismiss="modal">Esqueci a senha</button>
                         <button type="button" href="#cadastre-se" data-toggle="modal" data-dismiss="modal" class="btn btn-primary">Cadastre-se</button>
-                      
+                         
                   </div>
                 </div>
               </div>
@@ -159,5 +159,17 @@
         <script src="bootstrap/js/jquery-3.3.1.slim.min.js"></script>
         <script src="bootstrap/js/popper.min.js"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
-    </body>
+
+        <script src="javascript/jquery.growl.js" type="text/javascript"></script>
+        <link href="stylesheets/jquery.growl.css" rel="stylesheet" type="text/css"/>
+
+        <script>
+            $.growl.<?= $_SESSION['status']?>({message:"<?= $_SESSION['msg'] ?>"});
+        <script>
+        
+        <?php 
+            unset($_SESSION['msg']);
+            unset($_SESSION['status']);
+        ?>
+      </body>
 </html>
