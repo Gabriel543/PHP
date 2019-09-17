@@ -13,9 +13,9 @@
         <link href="fontawesome-free-5.9.0-web/css/all.css" rel="stylesheet">
         <script defer src="fontawesome-free-5.9.0-web/js/all.js"></script>
         <script src="Recursos/JavaScript/myVar.js"></script>
+        <link href="stylesheets/jquery.growl.css" rel="stylesheet" type="text/css"/>
+        <link rel="stylesheet" type="text/css" href="Recursos/CSS/style.css">
     </head>
-    <link rel="stylesheet" type="text/css" href="Recursos/CSS/style.css">
-    
     
     <body onresize="detectResize();">
         <main class="container">

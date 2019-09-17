@@ -75,8 +75,6 @@
                       </div>
                       <button type="submit" class="btn btn-primary">Logar</button>
                     </form>
-                   <small class="text-muted"><?= isset($_SESSION['msg']) ? $_SESSION['msg'] : "" ?></small>
-                   <?php unset($_SESSION['msg']); ?> 
                   </div>
                   <div class="modal-footer">
                       
@@ -161,15 +159,15 @@
         <script src="bootstrap/js/bootstrap.min.js"></script>
 
         <script src="javascript/jquery.growl.js" type="text/javascript"></script>
-        <link href="stylesheets/jquery.growl.css" rel="stylesheet" type="text/css"/>
-
-        <script>
-            $.growl.<?= $_SESSION['status']?>({message:"<?= $_SESSION['msg'] ?>"});
-        <script>
+    
         
+        
+        <script>
+          $.growl.<?= $_SESSION['status'] ?>({ message: "<?=$_SESSION['msg'] ?>" });
+        </script>
         <?php 
-            unset($_SESSION['msg']);
-            unset($_SESSION['status']);
+          unset($_SESSION['status']);
+          unset($_SESSION['msg']);
         ?>
       </body>
 </html>
